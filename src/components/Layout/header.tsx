@@ -3,12 +3,15 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 
 
 
 
 function Header(){
+
+    const router=useRouter()
 
      const navItems=[{
         
@@ -49,8 +52,8 @@ function Header(){
                     </div>
                     {/* place holder forth the them toggle */}
                     <div className="flex items-center gap-2">
-                        <Button>
-                            <Link href="/Auth">Login</Link>
+                        <Button className="cursor-pointer" onClick={()=>router.push("/Auth")}>
+                           Login
                         </Button>
                     </div>
 
